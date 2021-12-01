@@ -11,34 +11,40 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+<link href="../resources/css/signin.css" rel="stylesheet">
 </head>
-<body>
-	<div align="center">
-		<section class="vh-100 gradient-custom"
-			style="background-color: #94bbe9;">
-			<h1>Bienvenido</h1>
 
-			<form action="<%=request.getContextPath()%>/LoginServlet"
-				method="post">
-				<table style="with: 100%">
-					<tr>
-						<td><h4>Usuario</h4></td>
-						<td><input class="form-control m-2" type="text"
-							name="username" /></td>
-					</tr>
-					<tr>
-						<td><h4>Contraseña</h4></td>
-						<td><input class="form-control m-2" type="password"
-							name="password" /></td>
-					</tr>
+<body class="text-center">
+	
+	<main class="form-signin">
+		<form action="<%=request.getContextPath()%>/LoginServlet"
+			method="post">
 
-				</table>
-				<input class="m-3 btn btn-lg btn-primary" type="submit"
-					value="Ingresar" /> <input class="m-3 btn btn-lg btn-primary"
-					type="submit" value="Cancelar" />
-			</form>
-		</section>
+			<img class="mb-2" src="../resources/img/people.svg" alt=""
+				width="122" height="107">
+			<h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
 
-	</div>
+			<div class="form-floating">
+				<input type="text" class="form-control" id="floatingInput"
+					name="username" placeholder="name@example.com"> <label
+					for="floatingInput">Usuario</label>
+			</div>
+			<div class="form-floating">
+				<input type="password" class="form-control" id="floatingPassword"
+					name="password" placeholder="Password"> <label
+					for="floatingPassword">Contraseña</label>
+			</div>
+			<div class="checkbox mb-3">
+				<label> <input type="checkbox" value="remember-me">
+					Recordar
+				</label>
+			</div>
+			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign
+				in</button>
+	</main>
+	</form>
 </body>
 </html>
