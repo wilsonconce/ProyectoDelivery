@@ -21,7 +21,7 @@ public class Categoria implements Serializable{
 		this.setDescripcion(descripcion);
 	}
 
-	public int getIdCategori() {
+	public int getIdCategoria() {
 		return idCategoria;
 	}
 

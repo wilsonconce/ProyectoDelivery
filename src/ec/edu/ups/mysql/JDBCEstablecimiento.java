@@ -34,7 +34,7 @@ public class JDBCEstablecimiento extends JDBCGenericDAO<Establecimiento, Integer
 						+ establecimiento.getTelefono() + "', '" 
 						+ establecimiento.getHorario() + "',"
 						+ establecimiento.getUsuario().getIdUsuario() + ","
-						+ establecimiento.getCategoria().getIdCategori() + ")");
+						+ establecimiento.getCategoria().getIdCategoria() + ")");
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class JDBCEstablecimiento extends JDBCGenericDAO<Establecimiento, Integer
 						+ "telefono = '" + establecimiento.getTelefono() + "', "
 						+ "horario = '" + establecimiento.getHorario() + "', "
 						+ "idusuario = " + establecimiento.getUsuario().getIdUsuario() + ", "
-						+ "idcategoria = " + establecimiento.getCategoria().getIdCategori() 
+						+ "idcategoria = " + establecimiento.getCategoria().getIdCategoria() 
 						+ " WHERE nombre = '" + establecimiento.getNombre() + "'");
 
 	}
