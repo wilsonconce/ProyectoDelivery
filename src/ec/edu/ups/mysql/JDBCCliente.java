@@ -50,7 +50,7 @@ public class JDBCCliente extends JDBCGenericDAO<Cliente, Integer> implements Cli
 		try {
 				if (rs != null && rs.next()) {
 					cliente = new Cliente();
-					cliente.setIdCliente(rs.getInt("idMotorizado"));
+					cliente.setIdCliente(rs.getInt("idCliente"));
 					cliente.setNombre(rs.getString("nombre"));
 					cliente.setApellido(rs.getString("apellido"));
 					cliente.setCedula(rs.getString("cedula"));
@@ -73,12 +73,12 @@ public class JDBCCliente extends JDBCGenericDAO<Cliente, Integer> implements Cli
 		conexion.update("UPDATE Cliente SET "
 				+ "nombre = '" + cliente.getNombre() + "', "
 				+ "apellido = '" + cliente.getApellido() + "', "
-				+ "edad = '" + cliente.getEdad() + ", '"
-				+ "telefono = '" + cliente.getTelefono() + "', '"
-				+ "correo = " + cliente.getCorreo() + "', '"
-				+ "direccion = " + cliente.getDireccion() + "', "
-				+ "idusuario = " + cliente.getUsuario().getIdUsuario() 
-				+ "WHERE idCliente = " + cliente.getIdCliente());
+				+ "edad = " + cliente.getEdad() + ", "
+				+ "telefono = '" + cliente.getTelefono() + "', "
+				+ "correo = '" + cliente.getCorreo() + "', "
+				+ "direccion = '" + cliente.getDireccion() + "', "
+				+ "idusuario = " + cliente.getUsuario().getIdUsuario() + " "
+				+ "WHERE nombre = '" + cliente.getNombre() +"'");
 	}
 
 	@Override

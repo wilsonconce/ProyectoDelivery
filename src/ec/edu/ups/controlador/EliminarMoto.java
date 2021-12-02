@@ -7,37 +7,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ec.edu.ups.dao.CategoriaDAO;
 import ec.edu.ups.dao.DAOFactory;
-import ec.edu.ups.modelo.Categoria;
+import ec.edu.ups.dao.MotoDAO;
+import ec.edu.ups.modelo.Moto;
 
 /**
- * Servlet implementation class CrearCategoria
+ * Servlet implementation class EliminarEstablecimiento
  */
-@WebServlet("/ActualizarCategoria")
-public class ActualizarCategoria extends HttpServlet {
+@WebServlet("/EliminarMoto")
+public class EliminarMoto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private CategoriaDAO categoriaDAO;
-    private Categoria categoria;
-    
-    public ActualizarCategoria() {
-    	categoriaDAO = DAOFactory.getFactory().getCategoriaDAO();
-    	categoria = new Categoria();
-    }
-
+	private MotoDAO motoDAO;
+	private Moto moto;  
 	
+    public EliminarMoto() {
+    	motoDAO = DAOFactory.getFactory().getMotoDAO();
+    	moto = new Moto();
+    }
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = null;
 		try {
-		
-			categoria.setNombre(request.getParameter("nombre"));
-			categoria.setDescripcion(request.getParameter("descripcion"));	
-			categoriaDAO.update(categoria);			
-			
+			moto.setIdMoto(Integer.valueOf(request.getParameter("id")));		
+			motoDAO.delete(moto);
+
 			url = "/index.html";
 		} catch (Exception e) {
-			//url = "/JSPs/error.jsp";
-			e.printStackTrace();
+			url = "/JSPs/error.jsp";
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}

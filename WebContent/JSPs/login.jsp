@@ -18,7 +18,7 @@
 </head>
 
 <body class="text-center">
-
+	
 	<main class="form-signin">
 		<form action="<%=request.getContextPath()%>/LoginServlet"
 			method="post">
@@ -29,13 +29,13 @@
 
 			<div class="form-floating">
 				<input type="text" class="form-control" id="floatingInput"
-					name="username" placeholder="name@example.com"> <label
-					for="floatingInput">Usuario</label>
+					name="username" placeholder=""> <label
+					for="floatingInput"></label>
 			</div>
 			<div class="form-floating">
 				<input type="password" class="form-control" id="floatingPassword"
-					name="password" placeholder="Password"> <label
-					for="floatingPassword">Contraseña</label>
+					name="password" placeholder=""> <label
+					for="floatingPassword"></label>
 			</div>
 			<div class="checkbox mb-3">
 				<label> <input type="checkbox" value="remember-me">
@@ -44,7 +44,8 @@
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign
 				in</button>
-		</form>
+	
+	</form>
 	</main>
 </body>
 </html>

@@ -35,7 +35,7 @@ public class JDBCCategoria extends JDBCGenericDAO<Categoria, Integer> implements
 		ResultSet rs = conexion.query("SELECT * FROM Categoria WHERE idCategoria= " + id);
 		try {
 			if (rs != null && rs.next()) {
-				categoria = new Categoria(rs.getInt("idCategoria"), rs.getString("nombre"), rs.getString("direccion"));
+				categoria = new Categoria(rs.getInt("idCategoria"), rs.getString("nombre"), rs.getString("descripcion"));
 			}
 		} catch (SQLException e) {
 			System.out.println(">>>WARNING (JDBCCategoriaDAO:read): " + e.getMessage());
@@ -49,13 +49,13 @@ public class JDBCCategoria extends JDBCGenericDAO<Categoria, Integer> implements
 		conexion.update("UPDATE Categoria SET "
 					  + "nombre = '" + categoria.getNombre() 
 					  + "', descripcion = '" + categoria.getDescripcion() 
-					  + "' WHERE idCategoria = " + categoria.getIdCategori());
+					  + "' WHERE nombre = '" + categoria.getNombre() + "'");
 
 	}
 
 	@Override
 	public void delete(Categoria categoria) {
-		conexion.update("DELETE FROM Categoria WHERE id = " + categoria.getIdCategori());
+		conexion.update("DELETE FROM Categoria WHERE idCategoria = " + categoria.getIdCategori());
 
 	}
 
