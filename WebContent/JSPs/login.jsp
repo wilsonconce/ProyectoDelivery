@@ -46,6 +46,10 @@
 				in</button>
 		</form>
 	</main>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> branch 'master' of https://github.com/wilsonconce/ProyectoDelivery.git
 </body>
 </html>
