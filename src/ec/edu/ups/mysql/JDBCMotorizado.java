@@ -74,9 +74,9 @@ public class JDBCMotorizado extends JDBCGenericDAO<Motorizado, Integer> implemen
 				+ "edad = " + motorizado.getEdad() + ", "
 				+ "telefono = '" + motorizado.getTelefono() + "', "
 				+ "correo = '" + motorizado.getCorreo() + "', "
-				+ "iduruario = " + motorizado.getUsuario().getIdUsuario() + ", "
-				+ "iduruario = " + motorizado.getMoto().getIdMoto() + ", "
-				+ "WHERE idMotorizado = " + motorizado.getIdMotorizado());
+				+ "idusuario = " + motorizado.getUsuario().getIdUsuario() + ", "
+				+ "idMoto = " + motorizado.getMoto().getIdMoto() 
+				+ " WHERE nombre = '" + motorizado.getNombre() + "'");
 
 		
 	}

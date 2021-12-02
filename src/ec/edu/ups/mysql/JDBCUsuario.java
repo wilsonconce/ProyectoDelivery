@@ -50,7 +50,7 @@ public class JDBCUsuario extends JDBCGenericDAO<Usuario, Integer> implements Usu
 					  + "username = '" + usuario.getUserName() 
 					  + "', password = '" + usuario.getPassword() 
 					  + "', rol = '" + usuario.getRol() 
-					  + "' WHERE idUsuario = " + usuario.getIdUsuario());
+					  + "' WHERE username = '" + usuario.getUserName() + "'");
 
 	}
 

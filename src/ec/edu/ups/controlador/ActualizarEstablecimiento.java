@@ -35,7 +35,7 @@ public class ActualizarEstablecimiento extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = null;
 		try {
-			establecimiento.setIdEstablecimiento(Integer.valueOf(request.getParameter("id")));
+			
 			establecimiento.setNombre(request.getParameter("nombre"));
 			establecimiento.setDireccion(request.getParameter("direccion"));	
 			establecimiento.setTelefono(request.getParameter("telefono"));	
@@ -51,7 +51,8 @@ public class ActualizarEstablecimiento extends HttpServlet {
 			
 			url = "/index.html";
 		} catch (Exception e) {
-			url = "/JSPs/error.jsp";
+			//url = "/JSPs/error.jsp";
+			e.printStackTrace();
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);		
 	

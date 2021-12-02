@@ -6,17 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Establecimiento Encontrada</title>
+<title>Producto Encontrada</title>
 </head>
 <body>
-	<c:set var="est" scope="request" value="${establecimiento}" />
-	<h1>Establecimiento Encontrada</h1>		
+	<c:set var="pro" scope="request" value="${producto}" />
+	<h1>Producto Encontrada</h1>		
 		
-	<p>Id: ${est.idEstablecimiento}</p>
-	<p>Nombre: ${est.nombre}</p>
-	<p>Direccion: ${est.direccion}</p>
-	<p>Telefono: ${est.telefono}</p>
-	<p>Horario: ${est.horario}</p>
+	<p>Id: ${pro.id}</p>
+	<p>Nombre: ${pro.nombre}</p>
+	<p>Costo: ${pro.costo}</p>
+	<p>Descripción: ${pro.descripcion}</p>
+	<p>Establecimiento: ${pro.establecimiento.idEstablecimiento}</p>
 	
 	<a href="/AppDelivery/index.html">Regresar al index</a>
 	

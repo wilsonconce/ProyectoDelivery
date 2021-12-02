@@ -66,10 +66,10 @@ public class JDBCEstablecimiento extends JDBCGenericDAO<Establecimiento, Integer
 						+ "nombre = '" + establecimiento.getNombre() + "', "
 						+ "direccion = '" + establecimiento.getDireccion() + "', "
 						+ "telefono = '" + establecimiento.getTelefono() + "', "
-						+ "horario = '" + establecimiento.getHorario() + "',"
+						+ "horario = '" + establecimiento.getHorario() + "', "
 						+ "idusuario = " + establecimiento.getUsuario().getIdUsuario() + ", "
-						+ "idcategoria = " + establecimiento.getCategoria().getIdCategori() + ", "
-						+ "WHERE idEstablecimiento = " + establecimiento.getIdEstablecimiento());
+						+ "idcategoria = " + establecimiento.getCategoria().getIdCategori() 
+						+ " WHERE nombre = '" + establecimiento.getNombre() + "'");
 
 	}
 

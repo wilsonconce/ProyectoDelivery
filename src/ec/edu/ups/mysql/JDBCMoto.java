@@ -55,11 +55,12 @@ public class JDBCMoto extends JDBCGenericDAO<Moto, Integer> implements MotoDAO{
 
 	@Override
 	public void update(Moto moto) {
-		conexion.update("UPDATE Motorizado SET "
+		conexion.update("UPDATE Moto SET "
 				+ "placa = '" + moto.getPlaca() + "', "
 				+ "modelo = '" + moto.getModelo() + "', "
 				+ "marca = '" + moto.getMarca() + "', "
-				+ "color = '" + moto.getColor() + "'" );
+				+ "color = '" + moto.getColor() + "'"
+				+ " WHERE placa = '" + moto.getPlaca() + "'" );
 		
 	}
 

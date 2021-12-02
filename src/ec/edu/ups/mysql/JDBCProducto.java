@@ -59,7 +59,7 @@ public class JDBCProducto extends JDBCGenericDAO<Producto, Integer> implements P
 					  + "', costo = " + producto.getCosto() 
 					  + ", descripcion = '" + producto.getDescripcion() 
 					  + "', idestablecimiento= " + producto.getEstablecimiento().getIdEstablecimiento()
-					  + " WHERE id = " + producto.getId());
+					  + " WHERE nombre = '" + producto.getNombre() + "'");
 
 	}
 

@@ -12,32 +12,28 @@ import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.modelo.Categoria;
 
 /**
- * Servlet implementation class CrearCategoria
+ * Servlet implementation class EliminarEstablecimiento
  */
-@WebServlet("/ActualizarCategoria")
-public class ActualizarCategoria extends HttpServlet {
+@WebServlet("/EliminarCategoria")
+public class EliminarCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private CategoriaDAO categoriaDAO;
-    private Categoria categoria;
-    
-    public ActualizarCategoria() {
+	private CategoriaDAO categoriaDAO;
+	private Categoria categoria;  
+	
+    public EliminarCategoria() {
     	categoriaDAO = DAOFactory.getFactory().getCategoriaDAO();
     	categoria = new Categoria();
     }
-
-	
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = null;
 		try {
-		
-			categoria.setNombre(request.getParameter("nombre"));
-			categoria.setDescripcion(request.getParameter("descripcion"));	
-			categoriaDAO.update(categoria);			
-			
+			categoria.setIdCategoria(Integer.valueOf(request.getParameter("id")));		
+			categoriaDAO.delete(categoria);
+
 			url = "/index.html";
 		} catch (Exception e) {
-			//url = "/JSPs/error.jsp";
-			e.printStackTrace();
+			url = "/JSPs/error.jsp";
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}

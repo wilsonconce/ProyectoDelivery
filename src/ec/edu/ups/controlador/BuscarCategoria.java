@@ -14,13 +14,13 @@ import ec.edu.ups.modelo.Categoria;
 /**
  * Servlet implementation class CrearCategoria
  */
-@WebServlet("/ActualizarCategoria")
-public class ActualizarCategoria extends HttpServlet {
+@WebServlet("/BuscarCategoria")
+public class BuscarCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private CategoriaDAO categoriaDAO;
     private Categoria categoria;
     
-    public ActualizarCategoria() {
+    public BuscarCategoria() {
     	categoriaDAO = DAOFactory.getFactory().getCategoriaDAO();
     	categoria = new Categoria();
     }
@@ -29,12 +29,10 @@ public class ActualizarCategoria extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = null;
 		try {
-		
-			categoria.setNombre(request.getParameter("nombre"));
-			categoria.setDescripcion(request.getParameter("descripcion"));	
-			categoriaDAO.update(categoria);			
-			
-			url = "/index.html";
+			int id = Integer.valueOf(request.getParameter("idcategoria"));
+			categoria = categoriaDAO.read(id);
+			request.setAttribute("categoria", categoria);
+			url = "/JSPs/buscar_categoria.jsp";
 		} catch (Exception e) {
 			//url = "/JSPs/error.jsp";
 			e.printStackTrace();

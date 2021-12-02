@@ -34,7 +34,8 @@ public class BuscarEstablecimiento extends HttpServlet {
 			request.setAttribute("establecimiento", establecimiento);
 			url = "/JSPs/buscar_establecimiento.jsp";
 		} catch (Exception e) {
-			url = "/JSPs/error.jsp";
+			//url = "/JSPs/error.jsp";
+			e.printStackTrace();
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}
