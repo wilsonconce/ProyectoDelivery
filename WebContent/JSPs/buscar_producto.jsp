@@ -18,7 +18,7 @@
 	<p>Descripción: ${pro.descripcion}</p>
 	<p>Establecimiento: ${pro.establecimiento.idEstablecimiento}</p>
 	
-	<a href="/AppDelivery/index.html">Regresar al index</a>
+	<a href="/ProyectoDelivery/index.html">Regresar al index</a>
 	
 </body>
 </html>

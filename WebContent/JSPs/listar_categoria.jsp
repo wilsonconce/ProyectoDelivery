@@ -26,7 +26,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/AppDelivery/index.html">Regresar al index</a>
+	<a href="/ProyectoDelivery/index.html">Regresar al index</a>
 
 </body>
 </html>
