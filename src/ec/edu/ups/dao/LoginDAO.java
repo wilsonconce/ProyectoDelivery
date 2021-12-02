@@ -19,9 +19,10 @@ public class LoginDAO {
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from login where username = ? and password = ? ")) {
+						.prepareStatement("select * from usuario where username = ? and password = ? ")) {
 			preparedStatement.setString(1, login.getUsername());
 			preparedStatement.setString(2, login.getPassword());
+			
 
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
