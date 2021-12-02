@@ -17,7 +17,7 @@
 	<p>Nombre: ${p.nombre}</p>
 	<p>Apellid: ${p.apellido}</p>
 	
-	<a href="/EjemploJEE_Persona_Servlet_JSP_JDBC/index.html">Regresar al index</a>
+	<a href="/ProyectoDelivery/index.html">Regresar al index</a>
 	
 </body>
 </html>

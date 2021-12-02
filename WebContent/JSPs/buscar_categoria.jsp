@@ -16,7 +16,7 @@
 	<p>Nombre: ${cat.nombre}</p>
 	<p>Descripción: ${cat.descripcion}</p>
 	
-	<a href="/AppDelivery/index.html">Regresar al index</a>
+	<a href="/ProyectoDelivery/index.html">Regresar al index</a>
 	
 </body>
 </html>
