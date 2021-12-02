@@ -55,7 +55,7 @@ public class JDBCCategoria extends JDBCGenericDAO<Categoria, Integer> implements
 
 	@Override
 	public void delete(Categoria categoria) {
-		conexion.update("DELETE FROM Categoria WHERE idCategoria = " + categoria.getIdCategori());
+		conexion.update("DELETE FROM Categoria WHERE idCategoria = " + categoria.getIdCategoria());
 
 	}
 
