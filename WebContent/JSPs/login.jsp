@@ -18,7 +18,7 @@
 </head>
 
 <body class="text-center">
-	
+
 	<main class="form-signin">
 		<form action="<%=request.getContextPath()%>/LoginServlet"
 			method="post">
@@ -44,7 +44,8 @@
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign
 				in</button>
+		</form>
 	</main>
-	</form>
+
 </body>
 </html>
